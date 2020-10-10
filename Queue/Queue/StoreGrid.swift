@@ -18,6 +18,9 @@ struct StoreGrid: View {
                         Image(cell.imageURL)
                             .resizable()
                             .scaledToFit()
+                            .onTapGesture{
+                                print("Tapped \(cell.id.uuidString)")
+                            }
                     }
                 }
             }

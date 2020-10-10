@@ -13,8 +13,9 @@ struct Row: Identifiable {
     let cells: [Cell]
 }
 
-extension Row {
-    
+struct Cell: Identifiable {
+    let id = UUID()
+    let imageURL: String
 }
 
 extension Row {
@@ -36,7 +37,4 @@ extension Row {
     
 }
 
-struct Cell: Identifiable {
-    let id = UUID()
-    let imageURL: String
-}
+
