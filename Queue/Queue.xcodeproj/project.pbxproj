@@ -16,6 +16,7 @@
 		4429101825322C2400845144 /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4429101725322C2400845144 /* QueueTests.swift */; };
 		4429102325322C2400845144 /* QueueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4429102225322C2400845144 /* QueueUITests.swift */; };
 		4429103425322CFB00845144 /* StoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4429103325322CFB00845144 /* StoreCell.swift */; };
+		44576B0A253240C20047E405 /* StoreGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44576B09253240C20047E405 /* StoreGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		4429102225322C2400845144 /* QueueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueUITests.swift; sourceTree = "<group>"; };
 		4429102425322C2400845144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4429103325322CFB00845144 /* StoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCell.swift; sourceTree = "<group>"; };
+		44576B09253240C20047E405 /* StoreGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				4429100025322C2100845144 /* QueueApp.swift */,
 				4429103325322CFB00845144 /* StoreCell.swift */,
 				4429100225322C2100845144 /* ContentView.swift */,
+				44576B09253240C20047E405 /* StoreGrid.swift */,
 				4429100425322C2400845144 /* Assets.xcassets */,
 				4429100925322C2400845144 /* Persistence.swift */,
 				4429100E25322C2400845144 /* Info.plist */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4429100A25322C2400845144 /* Persistence.swift in Sources */,
+				44576B0A253240C20047E405 /* StoreGrid.swift in Sources */,
 				4429103425322CFB00845144 /* StoreCell.swift in Sources */,
 				4429100325322C2100845144 /* ContentView.swift in Sources */,
 				4429100125322C2100845144 /* QueueApp.swift in Sources */,
