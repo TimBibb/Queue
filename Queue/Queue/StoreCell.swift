@@ -23,12 +23,12 @@ extension Row {
         
         return [
             
-            Row(cells: [Cell(imageURL: "a1"), Cell(imageURL: "d1")]),
-            Row(cells: [Cell(imageURL: "a2"), Cell(imageURL: "e1")]),
-            Row(cells: [Cell(imageURL: "a3"), Cell(imageURL: "e1")]),
-            Row(cells: [Cell(imageURL: "a1"), Cell(imageURL: "d1")]),
-            Row(cells: [Cell(imageURL: "a2"), Cell(imageURL: "e1")]),
-            Row(cells: [Cell(imageURL: "a3"), Cell(imageURL: "e1")]),
+            Row(cells: [Cell(imageURL: "a1"), Cell(imageURL: "a2")]),
+            Row(cells: [Cell(imageURL: "a3"), Cell(imageURL: "a1")]),
+            Row(cells: [Cell(imageURL: "a2"), Cell(imageURL: "a3")]),
+            Row(cells: [Cell(imageURL: "a1"), Cell(imageURL: "a2")]),
+            Row(cells: [Cell(imageURL: "a3"), Cell(imageURL: "a1")]),
+            Row(cells: [Cell(imageURL: "a2"), Cell(imageURL: "a3")]),
         
         ]
         
