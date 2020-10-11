@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import CodeScanner
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -18,13 +19,12 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            List {
-                Text("Timbo")
-                Text("Help")
-            }.tabItem {
-                Image(systemName: "list.dash")
-                Text("QR")
-            }
+            
+            CodeScannerView(codeTypes: [.qr], simulatedData: "Sebastian Molina", completion: <#T##(Result<String, CodeScannerView.ScanError>) -> Void#>)
+                .tabItem {
+                    Image(systemName: "list.dash")
+                    Text("QR")
+                }
             
             StoreGrid()
                 .tabItem {
