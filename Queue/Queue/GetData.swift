@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import Firebase
 
-func joinQueue(userID: String, locationName: String) {
+func joinQueue(email: String, locationName: String) {
     
+
 }
