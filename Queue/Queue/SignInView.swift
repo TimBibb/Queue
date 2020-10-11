@@ -32,9 +32,9 @@ struct SignInView : View {
 
     var body: some View {
         VStack {
-            TextField($email)
-            SecureField($password)
-            if (error) {email
+            TextField("Email", text: $email)
+            SecureField("Password", text: $password)
+            if (error) {
                 Text("ahhh crap")
             }
             Button(action: signIn) {

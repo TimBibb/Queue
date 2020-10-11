@@ -24,25 +24,30 @@ struct ContentView: View {
     }
     
     var body: some View {
-        Group {
-            if (session.session != nil){
-                TabView {
-                    CodeScannerView(codeTypes: [.qr], simulatedData: "Sebastian Molina", completion: <#T##(Result<String, CodeScannerView.ScanError>) -> Void#>)
-                        .tabItem {
-                            Image(systemName: "list.dash")
-                            Text("QR")
-                        }
-                    
-                    StoreGrid()
-                        .tabItem {
-                            Image(systemName: "list.dash")
-                            Text("Locations")
-                        }
+        if (session.session != nil){
+            TabView {
+                CodeScannerView(codeTypes: [.qr], simulatedData: "Sebastian Molina") { result in
+                    switch result {
+                    case .success(let code):
+                        print("Found code: \(code)")
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
                 }
-            }else{
-                SignInView()
+                .tabItem {
+                    Image(systemName: "list.dash")
+                    Text("QR")
+                }
+                
+                StoreGrid()
+                    .tabItem {
+                        Image(systemName: "list.dash")
+                        Text("Locations")
+                    }
             }
-        }.onAppear(perform: getUser)
+        }else{
+            SignInView(session: session)
+        }
     }
 
     private func addItem() {
@@ -83,9 +88,10 @@ private let itemFormatter: DateFormatter = {
     formatter.timeStyle = .medium
     return formatter
 }()
-
+/*
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+*/
