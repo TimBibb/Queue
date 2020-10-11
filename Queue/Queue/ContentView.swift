@@ -32,8 +32,8 @@ struct ContentView: View {
     @State var username = ""
     
     var body: some View {
-        Group {
-            if signInSuccess {
+        return Group {
+            if (signInSuccess) {
                 TabView {
                     CodeScannerView(codeTypes: [.qr], simulatedData: "Sebastian Molina") { result in
                         switch result {
@@ -48,7 +48,7 @@ struct ContentView: View {
                         Text("QR")
                     }
                     
-                    StoreGrid(username)
+                    StoreGrid(username: username)
                         .tabItem {
                             Image(systemName: "list.dash")
                             Text("Locations")

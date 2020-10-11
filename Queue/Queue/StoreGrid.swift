@@ -10,13 +10,14 @@ import SwiftUI
 
 struct StoreGrid: View {
     let rows = Row.all()
-    let user: String = ""
+    var user: String = ""
     
     init(username: String) {
         user = username
     }
     var body: some View {
         List {
+            Text(user)
             ForEach(rows) { row in
                 HStack(alignment: .center) {
                     ForEach(row.cells) { cell in
