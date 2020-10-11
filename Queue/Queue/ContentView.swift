@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import Firebase
 import CodeScanner
 
 struct ContentView: View {
@@ -27,6 +28,7 @@ struct ContentView: View {
         session.listen()
     }
     */
+    //let db = Firestore.firestore()
     let defaults = UserDefaults.standard
     @State var signInSuccess = false
     @State var username = ""

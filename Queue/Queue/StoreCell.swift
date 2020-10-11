@@ -16,23 +16,17 @@ struct Row: Identifiable {
 struct Cell: Identifiable {
     let id = UUID()
     let imageURL: String
+    let merchant: String
 }
 
 extension Row {
     
     static func all() -> [Row] {
-        
         return [
-            
-            Row(cells: [Cell(imageURL: "a1"), Cell(imageURL: "a2")]),
-            Row(cells: [Cell(imageURL: "a3"), Cell(imageURL: "a1")]),
-            Row(cells: [Cell(imageURL: "a2"), Cell(imageURL: "a3")]),
-            Row(cells: [Cell(imageURL: "a1"), Cell(imageURL: "a2")]),
-            Row(cells: [Cell(imageURL: "a3"), Cell(imageURL: "a1")]),
-            Row(cells: [Cell(imageURL: "a2"), Cell(imageURL: "a3")]),
-        
+            Row(cells: [Cell(imageURL: "a1", merchant: "dmv"), Cell(imageURL: "a2", merchant: "starbucks")]),
+            Row(cells: [Cell(imageURL: "a3", merchant: "universal")])
         ]
-        
+
     }
     
 }

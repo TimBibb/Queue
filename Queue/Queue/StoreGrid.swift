@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
-
+import FirebaseFirestore
+import Firebase
 
 struct StoreGrid: View {
     let rows = Row.all()
     var user: String = ""
+    let db = Firestore.firestore()
     
     init(username: String) {
         user = username
@@ -25,7 +27,11 @@ struct StoreGrid: View {
                             .resizable()
                             .scaledToFit()
                             .onTapGesture{
-                                print("Tapped \(cell.id.uuidString)")
+                                let document = db.collection("queues").document(cell.merchant)
+                                // Atomically add a new region to the "regions" array field.
+                                document.updateData([
+                                    "queue": FieldValue.arrayUnion([user])
+                                ])
                             }
                     }
                 }
