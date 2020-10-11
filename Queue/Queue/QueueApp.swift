@@ -18,8 +18,8 @@ struct QueueApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(session: SessionStore.init())
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext).environmentObject(SessionStore())
         }
     }
 }

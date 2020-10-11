@@ -17,37 +17,47 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
-    @ObservedObject var session: SessionStore
+    struct defaultsKeys {
+        static let keyOne = "username"
+    }
     
+    //@EnvironmentObject var session: SessionStore
+    /*
     func getUser () {
         session.listen()
     }
+    */
+    let defaults = UserDefaults.standard
+    @State var signInSuccess = false
+    @State var username = ""
     
     var body: some View {
-        
-        if (session.session != nil){
-            TabView {
-                CodeScannerView(codeTypes: [.qr], simulatedData: "Sebastian Molina") { result in
-                    switch result {
-                    case .success(let code):
-                        print("Found code: \(code)")
-                    case .failure(let error):
-                        print(error.localizedDescription)
+        Group {
+            if signInSuccess {
+                TabView {
+                    CodeScannerView(codeTypes: [.qr], simulatedData: "Sebastian Molina") { result in
+                        switch result {
+                        case .success(let code):
+                            print("Found code: \(code)")
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                        }
                     }
-                }
-                .tabItem {
-                    Image(systemName: "list.dash")
-                    Text("QR")
-                }
-                
-                StoreGrid()
                     .tabItem {
                         Image(systemName: "list.dash")
-                        Text("Locations")
+                        Text("QR")
                     }
+                    
+                    StoreGrid(username)
+                        .tabItem {
+                            Image(systemName: "list.dash")
+                            Text("Locations")
+                        }
+                }
             }
-        }else{
-            SignInView(session: session)
+            else {
+                LoginFormView(signInSuccess: $signInSuccess, username: $username)
+            }
         }
     }
 
@@ -89,10 +99,40 @@ private let itemFormatter: DateFormatter = {
     formatter.timeStyle = .medium
     return formatter
 }()
-/*
+
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext).environmentObject(SessionStore())
     }
 }
-*/
+
+/*
+ NavigationView {
+     if (session.session != nil){
+         TabView {
+             CodeScannerView(codeTypes: [.qr], simulatedData: "Sebastian Molina") { result in
+                 switch result {
+                 case .success(let code):
+                     print("Found code: \(code)")
+                 case .failure(let error):
+                     print(error.localizedDescription)
+                 }
+             }
+             .tabItem {
+                 Image(systemName: "list.dash")
+                 Text("QR")
+             }
+             
+             StoreGrid()
+                 .tabItem {
+                     Image(systemName: "list.dash")
+                     Text("Locations")
+                 }
+         }
+     }else{
+         SignInView()
+     }
+ }.onAppear(perform: getUser)
+ .onDisappear(perform: session.unbind)
+ */

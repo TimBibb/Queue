@@ -23,6 +23,7 @@
 		44576B2A25325C010047E405 /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44576B2925325C010047E405 /* GetData.swift */; };
 		44576B2F25325E3B0047E405 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44576B2E25325E3B0047E405 /* SessionStore.swift */; };
 		44576B5F25328B900047E405 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44576B5E25328B900047E405 /* SignInView.swift */; };
+		44D6C5522532BDB700B30247 /* LoginFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D6C5512532BDB700B30247 /* LoginFormView.swift */; };
 		9E91CF213236AB64B8897478 /* Pods_Queue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD9C568A3DBD1DF88B3DE99 /* Pods_Queue.framework */; };
 		B4C28502A4B07B84F07B8B9F /* Pods_Queue_QueueUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA3A1942A155B8E1F3D5422 /* Pods_Queue_QueueUITests.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		44576B2925325C010047E405 /* GetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
 		44576B2E25325E3B0047E405 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		44576B5E25328B900047E405 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		44D6C5512532BDB700B30247 /* LoginFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormView.swift; sourceTree = "<group>"; };
 		7E79E913434A8B1C27B6770D /* Pods-QueueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QueueTests.release.xcconfig"; path = "Target Support Files/Pods-QueueTests/Pods-QueueTests.release.xcconfig"; sourceTree = "<group>"; };
 		92870F1FA11E7003BB5ECAA9 /* Pods_QueueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QueueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A25F5E26EA89C24FAB0CB2 /* Pods-Queue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queue.release.xcconfig"; path = "Target Support Files/Pods-Queue/Pods-Queue.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				44576B2925325C010047E405 /* GetData.swift */,
 				4429103325322CFB00845144 /* StoreCell.swift */,
 				4429100225322C2100845144 /* ContentView.swift */,
+				44D6C5512532BDB700B30247 /* LoginFormView.swift */,
 				44576B09253240C20047E405 /* StoreGrid.swift */,
 				4429100425322C2400845144 /* Assets.xcassets */,
 				4429100925322C2400845144 /* Persistence.swift */,
@@ -442,6 +445,7 @@
 			files = (
 				44576B5F25328B900047E405 /* SignInView.swift in Sources */,
 				4429100A25322C2400845144 /* Persistence.swift in Sources */,
+				44D6C5522532BDB700B30247 /* LoginFormView.swift in Sources */,
 				44576B0A253240C20047E405 /* StoreGrid.swift in Sources */,
 				4429103425322CFB00845144 /* StoreCell.swift in Sources */,
 				4429100325322C2100845144 /* ContentView.swift in Sources */,

@@ -41,6 +41,7 @@ class SessionStore : ObservableObject {
         ) {
         Auth.auth().createUser(withEmail: email, password: password, completion: handler)
     }
+    
     func signIn(
         email: String,
         password: String,
@@ -48,6 +49,7 @@ class SessionStore : ObservableObject {
         ) {
             Auth.auth().signIn(withEmail: email, password: password, completion: handler)
     }
+    
     func signOut () -> Bool {
         do {
             try Auth.auth().signOut()
@@ -57,6 +59,7 @@ class SessionStore : ObservableObject {
             return false
         }
     }
+    
     func unbind () {
         if let handle = handle {
             Auth.auth().removeStateDidChangeListener(handle)

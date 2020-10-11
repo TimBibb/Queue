@@ -7,9 +7,14 @@
 
 import SwiftUI
 
+
 struct StoreGrid: View {
     let rows = Row.all()
-        
+    let user: String = ""
+    
+    init(username: String) {
+        user = username
+    }
     var body: some View {
         List {
             ForEach(rows) { row in
@@ -27,9 +32,9 @@ struct StoreGrid: View {
         }.padding(EdgeInsets.init(top: 0, leading: -20, bottom: 0, trailing: -20))
     }
 }
-
-struct StoreGrid_Previews: PreviewProvider {
-    static var previews: some View {
-        StoreGrid()
-    }
-}
+//
+//struct StoreGrid_Previews: PreviewProvider {
+//    static var previews: some View {
+//        StoreGrid(user)
+//    }
+//}

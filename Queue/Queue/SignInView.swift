@@ -14,7 +14,7 @@ struct SignInView : View {
     @State var loading = false
     @State var error = false
 
-    @ObservedObject var session: SessionStore
+    @EnvironmentObject var session: SessionStore
     
     func signIn () {
         loading = true
