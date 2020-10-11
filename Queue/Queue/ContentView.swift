@@ -16,22 +16,33 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    
+    @ObservedObject var session: SessionStore
+    
+    func getUser () {
+        session.listen()
+    }
+    
     var body: some View {
-        TabView {
-            
-            CodeScannerView(codeTypes: [.qr], simulatedData: "Sebastian Molina", completion: <#T##(Result<String, CodeScannerView.ScanError>) -> Void#>)
-                .tabItem {
-                    Image(systemName: "list.dash")
-                    Text("QR")
+        Group {
+            if (session.session != nil){
+                TabView {
+                    CodeScannerView(codeTypes: [.qr], simulatedData: "Sebastian Molina", completion: <#T##(Result<String, CodeScannerView.ScanError>) -> Void#>)
+                        .tabItem {
+                            Image(systemName: "list.dash")
+                            Text("QR")
+                        }
+                    
+                    StoreGrid()
+                        .tabItem {
+                            Image(systemName: "list.dash")
+                            Text("Locations")
+                        }
                 }
-            
-            StoreGrid()
-                .tabItem {
-                    Image(systemName: "list.dash")
-                    Text("Locations")
-                }
-        }
+            }else{
+                SignInView()
+            }
+        }.onAppear(perform: getUser)
     }
 
     private func addItem() {
