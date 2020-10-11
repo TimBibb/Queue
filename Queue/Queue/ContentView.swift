@@ -24,6 +24,7 @@ struct ContentView: View {
     }
     
     var body: some View {
+        
         if (session.session != nil){
             TabView {
                 CodeScannerView(codeTypes: [.qr], simulatedData: "Sebastian Molina") { result in
